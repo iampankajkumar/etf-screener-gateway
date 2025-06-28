@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: etf-screener-gateway
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 80
+    autoDeploy: true
+    buildCommand: ""
+    startCommand: ""
